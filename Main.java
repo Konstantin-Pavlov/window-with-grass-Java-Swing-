@@ -12,7 +12,7 @@ public class Main {
         imageIcon = new ImageIcon("grass.jpg");
 
         // Создание окна
-        JFrame frame = new JFrame("Пример");
+        JFrame frame = new JFrame("Grass texture");
         frame.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -22,11 +22,12 @@ public class Main {
         // label.setBounds(0, 0, 100, 100); // Установка координат и размеров метки
         // label1.setBounds(200, 0, 100, 100); // Установка координат и размеров метки
 
-        for (int x = 0; x < 800; x += 100) {
-            JLabel label = new JLabel(imageIcon);
-            label.setBounds(x, 0, 100, 100); // Установка координат и размеров метки
-            // Добавление компонента на окно
-            frame.add(label);
+        for (int y = 0; y < 600; y += 100) {
+            for (int x = 0; x < 800; x += 100) {
+                JLabel label = new JLabel(imageIcon);
+                label.setBounds(x, y, 100, 100); // Установка координат и размеров метки
+                frame.add(label);// Добавление компонента на окно
+            }
         }
 
         // Добавление компонента на окно
