@@ -3,7 +3,6 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 
 public class Main {
-
     public static void main(String[] args) {
         // Загрузка изображения
         ImageIcon imageIcon = new ImageIcon("grass.jpg");
@@ -11,8 +10,9 @@ public class Main {
         // Создание окна
         JFrame frame = new JFrame("Grass texture");
         frame.setLayout(null);
-        
-frame.setSize(800, 600); // Установка размеров окна
+        frame.setSize(800, 600); // Установка размеров окна
+
+        // замощение окна текстурой травы
         for (int y = 0; y < 600; y += 100) {
             for (int x = 0; x < 800; x += 100) {
                 JLabel label = new JLabel(imageIcon); // Создание компонента для отображения изображения
@@ -21,10 +21,13 @@ frame.setSize(800, 600); // Установка размеров окна
             }
         }
 
-        
-
         frame.setVisible(true); // Отображение окна
+        centerFrameOnScreen(frame); // Отображение окна по центру
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+
+    private static void fillingTheWindow(ImageIcon imageIcon){
+        // move for here?
     }
 
     private static void centerFrameOnScreen(JFrame frame) {
