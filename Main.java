@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.Dimension;
+import java.awt.Frame;
 import java.awt.Toolkit;
 
 public class Main {
@@ -12,6 +13,14 @@ public class Main {
         frame.setLayout(null);
         frame.setSize(800, 600); // Установка размеров окна
 
+        fillingTheWindow(imageIcon, frame);
+
+        frame.setVisible(true); // Отображение окна
+        centerFrameOnScreen(frame); // Отображение окна по центру
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+
+    private static void fillingTheWindow(ImageIcon imageIcon, Frame frame) {
         // замощение окна текстурой травы
         for (int y = 0; y < 600; y += 100) {
             for (int x = 0; x < 800; x += 100) {
@@ -20,14 +29,6 @@ public class Main {
                 frame.add(label); // Добавление компонента на окно
             }
         }
-
-        frame.setVisible(true); // Отображение окна
-        centerFrameOnScreen(frame); // Отображение окна по центру
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-    }
-
-    private static void fillingTheWindow(ImageIcon imageIcon){
-        // move for here?
     }
 
     private static void centerFrameOnScreen(JFrame frame) {
